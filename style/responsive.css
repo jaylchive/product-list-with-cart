@@ -1,0 +1,71 @@
+@media screen and (max-width: 78.5rem) {
+  #wrap {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: unset;
+  }
+
+  #main {
+    grid-area: unset;
+  }
+
+  #cart {
+    position: unset;
+    grid-area: unset;
+    grid-row: 2 / -1;
+  }
+}
+
+@media screen and (max-width: 55.5rem) {
+  #wrap {
+    margin: 2rem auto;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    top: 100%;
+    left: 0;
+    transform: translate(0, -100%);
+  }
+
+  .modal-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .modal[open] {
+    animation: slide-in-from-bottom 0.45s ease-out;
+  }
+
+  .dessert-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 38.75rem) {
+  #main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .dessert-list {
+    grid-template-columns: 1fr;
+  }
+
+  .dessert-thumbnail > img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    transform: translateY(75%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}

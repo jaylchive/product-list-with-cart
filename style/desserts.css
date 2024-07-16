@@ -1,0 +1,121 @@
+.dessert-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+}
+
+.dessert-thumbnail {
+  position: relative;
+}
+
+.dessert-thumbnail > img {
+  width: 16.75rem;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+}
+
+.dessert-item.selected .dessert-thumbnail > img {
+  border-color: var(--color-red);
+}
+
+.dessert-btn--cart {
+  width: 10rem;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border: 1px solid var(--color-rose-500);
+  border-radius: 1000px;
+  background-color: var(--color-rose-0);
+  transform: translate(-50%, 50%);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.dessert-btn--cart:hover {
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.dessert-btn--cart > * {
+  flex: 0 0 auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.dessert-btn--quantity-wrap {
+  width: 10rem;
+  height: 2.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-radius: 1000px;
+  background-color: var(--color-red);
+  transform: translate(-50%, 50%);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.dessert-btn--quntity {
+  width: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-rose-0);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color var(--transition);
+}
+
+.dessert-btn--quntity > svg {
+  color: var(--color-rose-0);
+  transition: color var(--transition);
+}
+
+.dessert-btn--quntity:hover {
+  background-color: var(--color-rose-0);
+}
+
+.dessert-btn--quntity:hover > svg {
+  color: var(--color-red);
+}
+
+.dessert-quantity {
+  color: var(--color-rose-0);
+  font-size: 0.875rem;
+}
+
+.dessert-info {
+  margin-top: 2.5rem;
+}
+
+.dessert-info > *:not(:last-child) {
+  display: block;
+  margin-bottom: 0.65rem;
+}
+
+.dessert-category {
+  color: var(--color-rose-500);
+  font-size: 0.875rem;
+}
+
+.dessert-name {
+  font-weight: 600;
+}
+
+.dessert-price {
+  color: var(--color-red);
+  font-weight: 600;
+}

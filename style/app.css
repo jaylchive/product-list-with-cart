@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --duration: 0.3s;
+  --transition: var(--duration) ease;
+
+  --color-red: hsl(14, 86%, 42%);
+  --color-red-dark: hsl(14, 85%, 32%);
+  --color-green: hsl(159, 69%, 38%);
+
+  --color-rose-0: hsl(0, 0%, 100%);
+  --color-rose-50: hsl(20, 50%, 98%);
+  --color-rose-100: hsl(13, 31%, 94%);
+  --color-rose-300: hsl(14, 25%, 72%);
+  --color-rose-400: hsl(7, 20%, 60%);
+  --color-rose-500: hsl(12, 20%, 44%);
+  --color-rose-900: hsl(14, 65%, 9%);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+}
+
+textarea,
+input {
+  color: inherit;
+  font: inherit;
+  border: none;
+  border-radius: unset;
+  outline: none;
+  background: none;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+body {
+  color: var(--color-rose-900);
+  font-size: var(--font-size-md);
+  font-family: 'Red Hat Text', sans-serif;
+  line-height: 1;
+  background-color: var(--color-rose-50);
+}
+
+.hidden {
+  display: none !important;
+}
+
+#wrap {
+  display: grid;
+  grid-template-columns: 50rem 24rem;
+  grid-template-areas: 'main cart';
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  margin: 5.5rem auto;
+}
+
+#main {
+  grid-area: main;
+}
+
+#cart {
+  grid-area: cart;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 5.5rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.primary-btn {
+  width: 100%;
+  height: 3.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-rose-0);
+  font-weight: 600;
+  border-radius: 1000px;
+  background-color: var(--color-red);
+  transition: background-color var(--transition);
+}
+
+.primary-btn:hover {
+  background-color: var(--color-red-dark);
+}
+
+.attribution {
+  padding-bottom: 1.5rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

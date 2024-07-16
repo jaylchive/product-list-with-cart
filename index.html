@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style/app.css" />
+    <link rel="stylesheet" href="./style/desserts.css" />
+    <link rel="stylesheet" href="./style/cart.css" />
+    <link rel="stylesheet" href="./style/modal.css" />
+    <link rel="stylesheet" href="./style/responsive.css" />
+    <title>Frontend Mentor | Product list with cart</title>
+    <script defer type="module" src="./script/markup.js"></script>
+    <script defer type="module" src="./script/app.js"></script>
+  </head>
+  <body>
+    <div id="modal">
+      <dialog class="modal">
+        <div class="modal-container">
+          <img src="./assets/images/icon-order-confirmed.svg" />
+          <h2 class="modal-title">Order Confirmed</h2>
+          <p class="modal-desc">We hope you enjoy your food!</p>
+          <ul class="modal-list"></ul>
+          <form method="dialog">
+            <button class="modal-btn primary-btn">Start New Order</button>
+          </form>
+        </div>
+      </dialog>
+    </div>
+    <div id="wrap">
+      <aside id="cart">
+        <div class="cart-container">
+          <h2 class="cart-title">Your Cart(<span>0</span>)</h2>
+          <div class="cart-empty">
+            <img src="./assets/images/illustration-empty-cart.svg" />
+            <p class="cart-empty--text">Your added items will appear here</p>
+          </div>
+          <div class="cart-content hidden">
+            <ul class="cart-list"></ul>
+            <div class="order-action">
+              <div class="order-col--1">
+                <p class="order-label">Order Total</p>
+                <span class="order-total"></span>
+              </div>
+              <div class="order-col--2">
+                <img src="./assets/images/icon-carbon-neutral.svg" />
+                <span>This is a <strong>carbon neutral</strong> delivery</span>
+              </div>
+              <button class="confirm-btn primary-btn">Confirm Order</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main id="main">
+        <h1 class="title">Desserts</h1>
+        <ul class="dessert-list"></ul>
+      </main>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://github.com/jaylspace/product-list-with-cart" target="_blank">Jay L</a>.
+    </div>
+  </body>
+</html>
