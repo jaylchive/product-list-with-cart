@@ -30,7 +30,6 @@ function init() {
   const quantityBtnWrappers = document.querySelectorAll('.dessert-btn--quantity-wrap');
 
   dessertData.map(data => (data.quantity = 0));
-  console.log(dessertData);
   quantityContainer.forEach(container => (container.textContent = 0));
   dessertItems.forEach(item => item.classList.remove('selected'));
   addToCartBtns.forEach(btn => btn.classList.remove('hidden'));

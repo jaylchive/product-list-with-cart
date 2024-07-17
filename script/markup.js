@@ -6,9 +6,9 @@ function generateDessertMarkup(data) {
   return `
     <li class="dessert-item" data-id="${data.id}">
       <div class="dessert-thumbnail">
-        <img src="${data.image.desktop}" />
+        <img src="${data.image.desktop}" alt="${data.name}" />
         <button class="dessert-btn--cart">
-          <img src="./assets/images/icon-add-to-cart.svg" />
+          <img src="./assets/images/icon-add-to-cart.svg" alt="Add to cart icon" />
           <span>Add to Cart</span>
         </button>
         <div class="dessert-btn--quantity-wrap hidden">
@@ -73,7 +73,7 @@ function generateCartListMarkup(data) {
 function generateModalListMarkup(data) {
   return `
     <li class="modal-item">
-      <img src="${data.image.thumbnail}" />
+      <img src="${data.image.thumbnail}" alt="${data.name}" />
       <h5 class="modal-name">${data.name}</h5>
       <div class="modal-info">
         <span class="modal-quantity">x${data.quantity}</span>
@@ -93,31 +93,21 @@ function generateModalTotalMarkup(totalPrice) {
   `;
 }
 
+function insertListHTML(listName, mainData, fn) {
+  const listContainer = document.querySelector(`.${listName}-list`);
+  mainData.forEach(data => listContainer.insertAdjacentHTML('beforeend', fn(data)));
+}
+
 export function insertModalHTML(cartData, totalPrice) {
   const modalListContainer = document.querySelector('.modal-list');
-
-  cartData.forEach(data => {
-    const markup = generateModalListMarkup(data);
-    modalListContainer.insertAdjacentHTML('beforeend', markup);
-  });
-
+  insertListHTML('modal', cartData, generateModalListMarkup);
   modalListContainer.insertAdjacentHTML('beforeend', generateModalTotalMarkup(totalPrice));
 }
 
 export function insertCartHTML(cartData) {
-  const cartListContainer = document.querySelector('.cart-list');
-
-  cartData.forEach(data => {
-    const markup = generateCartListMarkup(data);
-    cartListContainer.insertAdjacentHTML('beforeend', markup);
-  });
+  insertListHTML('cart', cartData, generateCartListMarkup);
 }
 
 export function insetDessertHTML() {
-  const dessertListContainer = document.querySelector('.dessert-list');
-
-  dessertData.forEach((data, i) => {
-    const markup = generateDessertMarkup(data, i);
-    dessertListContainer.insertAdjacentHTML('beforeend', markup);
-  });
+  insertListHTML('dessert', dessertData, generateDessertMarkup);
 }
